@@ -1,10 +1,41 @@
 .App {
   text-align: center;
+  
+}
+:root{
+  background-color: #282c34;
+  --main-text-color:white;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text{
+  color:var(--main-text-color);
+
+}
+.nominbutton{
+  background-color:transparent;
+  border-style:solid;
+  border-color:var(--main-text-color);
+  border-radius:5px;
+  color:var(--main-text-color);
+
+}
+
+img{
+  max-height:60%;
+  max-width:95%;
+}
+
+.searchDisplayCard{
+  width:20vw;
+  /* height:40vh; */
+  margin:5px auto;
+  padding:5px;
+  border-style:solid;
+  border-width:2px;
+  border-color:var(--main-text-color);
+  border-radius:10px;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,25 +45,54 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--main-text-color);
+  margin-top:10vh;
+}
+.text{
+  margin:0 20px;
+  font-style:tisa;
+}
+
+@media screen and (min-width: 601px) {
+  #title {
+    font-size: 80px;
+    width:100vw;
+    margin-top:10px;
+  }
+}
+@media screen and (max-width: 601px) {
+  #title {
+    font-size: 30px;
+    width:100vw;
+    margin:10px;
+  }
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input{
+  min-width:60%;
+  height:25px;
+  border-width:0px;
+  padding:2px 5px;
+  
+
+}
+button{
+  height:30px;
+  
+}
+
+button:disabled,
+button[disabled]{
+  color: #666666;
+  border-color:#666666;
 }
