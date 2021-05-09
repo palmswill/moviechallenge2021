@@ -8,11 +8,28 @@
 
 }
 
-.text{
-  color:var(--main-text-color);
+@keyframes appear {
+  from {opacity:0%}
+  to {opacity:100%}
 
 }
-.nominbutton{
+
+.text{
+  color:var(--main-text-color);
+  font-family: "Times New Roman", Times, serif;
+   text-overflow: ellipsis; 
+   white-space:nowrap; 
+   word-wrap:break-word;
+  overflow:hidden;
+
+}
+.searchText{
+  color:var(--main-text-color);
+  font-family: "Times New Roman", Times, serif;
+
+}
+button{
+  height:30px;
   background-color:transparent;
   border-style:solid;
   border-color:var(--main-text-color);
@@ -26,23 +43,37 @@ img{
   max-width:95%;
 }
 
+.displayBox{
+  margin-top:1vh;
+  display:flex;
+  gap:3px
+}
+
+.empty{
+  position:relative;
+
+  
+}
+.icon{
+  position:absolute;
+  top:40%;
+  left:40%;
+}
+
 .searchDisplayCard{
   width:20vw;
   /* height:40vh; */
   margin:5px auto;
+  animation:appear 5s 1;
   padding:5px;
   border-style:solid;
   border-width:2px;
   border-color:var(--main-text-color);
   border-radius:10px;
+  
 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   min-height: 30vh;
@@ -52,7 +83,7 @@ img{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: var(--main-text-color);
-  margin-top:10vh;
+  margin-top:5vh;
 }
 .text{
   margin:0 20px;
@@ -60,39 +91,73 @@ img{
 }
 
 @media screen and (min-width: 601px) {
-  #title {
+  .title {
     font-size: 80px;
     width:100vw;
-    margin-top:10px;
+    margin-top:5px;
   }
 }
 @media screen and (max-width: 601px) {
-  #title {
+  .title {
     font-size: 30px;
     width:100vw;
     margin:10px;
   }
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-input{
+
+input#searchBar{
+  margin-top:10%;
   min-width:60%;
   height:25px;
-  border-width:0px;
+  border-width:1px;
   padding:2px 5px;
-  
-
 }
-button{
-  height:30px;
-  
+input#linkBar{
+  min-width:30%;
+  height:25px;
 }
 
 button:disabled,
 button[disabled]{
   color: #666666;
   border-color:#666666;
+}
+
+.nominationSection{
+  margin:5px;
+  gap:3px;
+  display:flex;
+
+}
+
+
+@keyframes drop {
+  from {height:20vh}
+  to {height:30vh}
+
+}
+.nomicard{
+  padding-top:20px;
+  width:20vw;
+  height:20vh;
+  text-align: center;
+  color:var(--main-text-color);
+  animation:appear 2s 1;
+  border-style:solid;
+  border-color:var(--main-text-color);
+  border-radius:5px;
+
+}
+.nomifull{
+  padding:5px;
+  width:20vw;
+  height:45vh;
+  text-align: center;
+  color:var(--main-text-color);
+  border-style:solid;
+  border-color:var(--main-text-color);
+  border-radius:5px;
+
 }

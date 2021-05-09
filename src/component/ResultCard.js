@@ -32,9 +32,9 @@ export default function ResultCard({info} ) {
     return (
         <div className='searchDisplayCard' >
             <img src={info.Poster} alt={info.Title}/>
-            <p className='text '>{info.Title}</p>
+            <p className='searchText '>{info.Title}</p>
             <p className='text'>{info.Year}</p>
-            <button  ref={nominateRef} onClick={handleNomination} className="nominbutton">nomination </button>
+            <button  ref={nominateRef} onClick={handleNomination} className="nomibutton">nomination </button>
 
 
             
