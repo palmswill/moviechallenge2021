@@ -43,8 +43,8 @@ export default function MovieContextProvider(props) {
   useEffect(() => {
     localStorage.setItem("nomination", JSON.stringify(nomination));
     if (nomination.length === 5) {
+
       document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-      setSearchResult([]);
     }
   }, [nomination]);
 
@@ -56,6 +56,7 @@ export default function MovieContextProvider(props) {
         searchWord,
         setSearchWord,
         errorMessage,
+        setErrorMessage,
         nomination,
         setNomination,
         removeNomination,

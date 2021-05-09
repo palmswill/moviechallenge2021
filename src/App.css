@@ -44,7 +44,7 @@ img{
 }
 
 .displayBox{
-  margin-top:1vh;
+  margin-top:0.5vh;
   display:flex;
   gap:3px
 }

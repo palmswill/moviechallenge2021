@@ -2,7 +2,7 @@ import React,{useContext,useEffect,useRef} from 'react'
 import { MovieContext } from '../context/MovieContextProvider'
 
 export default function ResultCard({info} ) {
-    const {setNomination,nomination}=useContext(MovieContext)
+    const {setNomination,nomination,setSearchResult}=useContext(MovieContext)
     const nominateRef=useRef(null)
 
     const handleNomination = ()=>{
@@ -14,6 +14,7 @@ export default function ResultCard({info} ) {
 
     useEffect(() => {
          if (nomination.length===5){
+             setSearchResult([]);
              nominateRef.current.disabled=true;
 
          }
@@ -21,7 +22,7 @@ export default function ResultCard({info} ) {
             nominateRef.current.disabled=nomination.filter(id => id === info.imdbID).length;
          }
         
-    }, [nomination,info.imdbID])
+    }, [nomination,setSearchResult,info.imdbID])
 
 
 
