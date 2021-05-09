@@ -1,5 +1,6 @@
 import React, { useRef, useContext } from "react";
 import { MovieContext } from "../context/MovieContextProvider";
+import logo from "../shoppng.png";
 
 const Title = () => {
   const { setSearchWord, nomination, setErrorMessage } = useContext(
@@ -13,7 +14,9 @@ const Title = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (nomination.length === 5) {
-      setErrorMessage("You have reached 5 nominations, please remove 1 to continue searching");
+      setErrorMessage(
+        "You have reached 5 nominations, please remove 1 to continue searching"
+      );
     } else {
       setSearchWord(inputBar.current.value);
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -22,12 +25,10 @@ const Title = () => {
   };
 
   const generateLink = (nomination) => {
-    console.log(nomination);
     let link = document.location.href;
     nomination.map((id) => (link += id + "&&"));
     link = link.substr(0, link.length - 2);
 
-    console.log(link);
     return link;
   };
   const copyLink = () => {
@@ -60,10 +61,13 @@ const Title = () => {
 
   return (
     <div id="title">
-      <span className="title text">The Shoppies</span>
-      <button ref={modeButton} onClick={changeMode}>
-        Dark Mode
-      </button>
+      <div id="titleContainer">
+        <img id="logo" src={logo} alt="shopify" />
+        <span className="title text">The Shoppies</span>
+        <button ref={modeButton} onClick={changeMode}>
+          Dark Mode
+        </button>
+      </div>
       {nomination.length === 5 ? (
         <div>
           <span>{"Share it with Friends! : "} </span>

@@ -28,6 +28,14 @@
   font-family: "Times New Roman", Times, serif;
 
 }
+
+
+#titleContainer{
+  position:relative;
+  margin:50px;
+
+
+}
 button{
   height:30px;
   background-color:transparent;
@@ -43,9 +51,19 @@ img{
   max-width:95%;
 }
 
+#logo{
+  position:absolute;
+  min-width:100px;
+  min-height:100px;
+  left:-15%;
+
+
+}
+
 .displayBox{
   margin-top:0.5vh;
   display:flex;
+  flex-wrap:wrap;
   gap:3px
 }
 
@@ -159,5 +177,6 @@ button[disabled]{
   border-style:solid;
   border-color:var(--main-text-color);
   border-radius:5px;
+  overflow:hidden;
 
 }

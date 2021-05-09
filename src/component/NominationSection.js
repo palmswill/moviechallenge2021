@@ -18,8 +18,8 @@ export default function NominationSection() {
           return <NominationCard key={index} imdbID={imdbID} />;
         })}
         {
-         [...Array(5-nomination.length)].map((index) => {
-            return <div className="nomicard empty"><div className="icon"><i className="fas fa-plus-circle fa-2x" onClick={handleIconClick}></i></div></div>
+         [...Array(5-nomination.length)].map((value,index) => {
+            return <div className="nomicard empty" key={index+5}><div className="icon" key={index}><i className="fas fa-plus-circle fa-2x" onClick={handleIconClick}></i></div></div>
           })
 
         }
