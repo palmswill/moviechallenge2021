@@ -46,6 +46,9 @@ export default function MovieContextProvider(props) {
 
       document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
     }
+    else{
+      setErrorMessage("");
+    }
   }, [nomination]);
 
   return (
